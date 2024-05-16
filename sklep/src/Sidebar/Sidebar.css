@@ -1,16 +1,43 @@
-.sidebar-title{
-  font-size: 22px;
-  font-weight: normal;
-  margin-bottom: 20px;
+/* Sidebar.css */
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #f7f7f7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: width 0.3s;
 }
 
-.sidebar{
-  width:15%;
-  position: fixed;
-  height: 100%;
-  border-right:2px solid #e5e5e5;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.logo-container {
+  text-align: center;
+  padding: 20px;
+  
+}
+.logo-container h1 {
+  font-size: 3rem; /* Adjust the size as needed */
+  line-height: 1; /* Ensures the icon doesn't have extra space around it */
+}
+
+
+.sidebar-title {
+  font-size: 1.2em;
+  margin: 20px 20px 30px 30px;
+  cursor: pointer;
+}
+
+.ml {
+  margin-left: 20px;
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.collapsible-content.expanded {
+  max-height: 500px; /* Adjust as necessary */
 }

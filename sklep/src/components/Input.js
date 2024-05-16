@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
 
-export default function Input() {
+const Input = ({ handleChange, value, title, name }) => {
   return (
-    <div>Input</div>
-  )
-}
+    <label className="sidebar-label-container">
+      <input onChange={handleChange} type="radio" value={value} name={name} />
+      <span className="checkmark"></span>{title}
+    </label>
+  );
+};
+
+export default Input;
