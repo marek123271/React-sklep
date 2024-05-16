@@ -5,16 +5,17 @@ import Recommended from './Recommended/Recommended';
 import Category from './Sidebar/Category/Category';
 import Colours from './Sidebar/Colours/Colours';
 import Price from './Sidebar/Price/Price';
+import Sidebar from './Sidebar/Sidebar';
 function App() {
   return (
     <>
+    <Sidebar/>
+    
       <Navigation />
       <Recommended />
       <Products />
       
-      <Category />
-      <Colours/>
-      <Price/>
+      
     </>
   );
 }
