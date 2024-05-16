@@ -1,0 +1,49 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Dodaj to, aby równomiernie rozmieszczać karty */
+    margin-left: auto; /* Wycentruj kontener */
+    margin-right: auto; /* Wycentruj kontener */
+    margin-top: 2rem;
+  }
+  
+  .card {
+    flex: 1 1 21%; /* Ustaw karty na 21% szerokości, aby zmieścić cztery w jednym wierszu z odstępami */
+    box-sizing: border-box; /* Upewnij się, że padding i border są wliczane do szerokości */
+    margin: 20px;
+    border: 2px solid #ededed;
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+
+.card-image{
+width: 13rem;
+margin-bottom: 1rem;
+}
+.card-title{
+    margin-bottom: 1rem;
+
+}
+.card-reviews{
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.rating-star{
+    color:chartreuse
+}
+
+.total-reviews{
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+.card-price{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.bag-icon{
+    color: #709b32;
+    font-size: 2rem;
+}
