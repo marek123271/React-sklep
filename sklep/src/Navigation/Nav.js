@@ -15,15 +15,15 @@ export default function Nav() {
 
       <div className="profile-container">
         <a href ='#'>
-        <FiHeart />
+        
 
           <FiHeart className="nav-icon" />
         </a>
         <a href="/">
-          <AiOutlineShoppingCart className="nav-icons"/>
+          <AiOutlineShoppingCart className="nav-icon"/>
         </a>
         <a href="/">
-          <AiOutlineUserAdd className="nav-icons"/>
+          <AiOutlineUserAdd className="nav-icon"/>
         </a>
 
       </div>
