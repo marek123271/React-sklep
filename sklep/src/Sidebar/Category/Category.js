@@ -9,7 +9,7 @@ function Category({ handleChange }) {
 
       <div className="category-list">
         <label className="sidebar-label-container">
-          <input onChange={handleChange} type="radio" value="" name="test" />
+          <input onChange={handleChange} type="radio" value="" name="category" />
           <span className="checkmark"></span>All
         </label>
 
@@ -17,32 +17,32 @@ function Category({ handleChange }) {
           handleChange={handleChange}
           value="sneakers"
           title="Sneakers"
-          name="test"
-          style={{ background: "red" }}
+          name="category"
+          
         />
 
         <Input
           handleChange={handleChange}
           value="flats"
           title="Flats"
-          name="test"
-          style={{ background: "blue" }}
+          name="category"
+          
         />
 
         <Input
           handleChange={handleChange}
           value="sandals"
           title="Sandals"
-          name="test"
-          style={{ background: "green" }}
+          name="category"
+          
         />
 
         <Input
           handleChange={handleChange}
           value="heels"
           title="Heels"
-          name="test"
-          style={{ background: "black" }}
+          name="category"
+          
         />
       </div>
     </div>

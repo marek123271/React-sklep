@@ -19,6 +19,7 @@ const Colours = ({ handleChange }) => {
           title="Red"
           name="color"
           color="red"
+          style={{ background: "red" }}
         />
 
         <Input
@@ -27,6 +28,7 @@ const Colours = ({ handleChange }) => {
           title="Blue"
           name="color"
           color="blue"
+          style={{ background: "blue" }}
         />
 
         <Input
@@ -35,6 +37,7 @@ const Colours = ({ handleChange }) => {
           title="Green"
           name="color"
           color="green"
+          style={{ background: "green" }}
         />
 
         <Input
@@ -42,14 +45,16 @@ const Colours = ({ handleChange }) => {
           value="black"
           title="Black"
           name="color"
-          color="black"
+          color="rgb(58, 57, 56)"
+          style={{ background: "black" }}
         />
         <Input
           handleChange={handleChange}
           value="white"
-          title="white"
+          title="White"
           name="color"
-          color="white"
+          color="black"
+          style={{ background: "rgb(234, 230, 225)" }}
         />
       </div>
     </>

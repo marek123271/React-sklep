@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Category from "./Category/Category";
 import Price from "./Price/Price";
-import Colours from "./Colours/colours.js";
+import Colours from "./Colours/colours";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -14,7 +14,7 @@ const Sidebar = () => {
   const toggleColor = () => setIsColorOpen(!isColorOpen);
 
   const handleChange = (event) => {
-    console.log(event.target.value); // Example usage
+    console.log(event.target.value);
   };
 
   return (
@@ -28,7 +28,7 @@ const Sidebar = () => {
           Category
         </h2>
         <div className={`collapsible-content ${isCategoryOpen ? 'expanded' : ''}`}>
-          <Category />
+          <Category handleChange={handleChange} />
         </div>
       </div>
 
