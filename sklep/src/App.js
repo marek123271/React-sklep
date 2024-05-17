@@ -80,9 +80,9 @@ function App() {
     <>
     <Sidebar handleChange={handleChange}/>
     
-      <Navigation />
-      <Recommended />
-      <Products />
+      <Navigation search={search} handleChange={handleChange}/>
+      <Recommended handleClick={handleClick}/>
+      <Products result={result}/>
       
       
       
