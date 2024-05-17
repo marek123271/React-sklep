@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import Category from "./Category/Category";
 import Price from "./Price/Price";
-import Colours from "./Colours/Colours.js";
-
-
+import Colours from "./Colours/colours.js";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -14,6 +12,10 @@ const Sidebar = () => {
   const toggleCategory = () => setIsCategoryOpen(!isCategoryOpen);
   const togglePrice = () => setIsPriceOpen(!isPriceOpen);
   const toggleColor = () => setIsColorOpen(!isColorOpen);
+
+  const handleChange = (event) => {
+    console.log(event.target.value); // Example usage
+  };
 
   return (
     <section className="sidebar">
@@ -35,7 +37,7 @@ const Sidebar = () => {
           Price
         </h2>
         <div className={`collapsible-content ${isPriceOpen ? 'expanded' : ''}`}>
-          <Price />
+          <Price handleChange={handleChange} />
         </div>
       </div>
 
@@ -44,7 +46,7 @@ const Sidebar = () => {
           Color
         </h2>
         <div className={`collapsible-content ${isColorOpen ? 'expanded' : ''}`}>
-          <Colours />
+          <Colours handleChange={handleChange} />
         </div>
       </div>
     </section>

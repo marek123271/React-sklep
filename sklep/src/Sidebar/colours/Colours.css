@@ -1,56 +1,43 @@
-.color-title {
-    margin-top: 20px;
-}
-
-.ml {
-    margin-left: 20px;
-}
-
 .sidebar-label-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    display: block;
     position: relative;
     padding-left: 35px;
+    margin-bottom: 8px;
     cursor: pointer;
-    font-size: 16px;
-}
-
-.sidebar-label-container input {
+    font-size: 18px;
+    user-select: none;
+  }
+  
+  /* Create a custom radio button */
+  .sidebar-label-container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-}
-
-.checkmark {
+  }
+  
+  /* Create the checkmark */
+  .checkmark {
     position: absolute;
     top: 0;
     left: 0;
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
     background-color: #eee;
     border-radius: 50%;
-}
-
-.sidebar-label-container input:checked ~ .checkmark {
-    background-color: #2196F3;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.sidebar-label-container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.sidebar-label-container .checkmark:after {
-    top: 7px;
-    left: 7px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: white;
-}
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .sidebar-label-container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .sidebar-label-container input:checked ~ .checkmark {
+    background-color: #2196f3;
+  }
+  
+  /* Create a blue bullet for each input when checked */
+  .sidebar-label-container input:checked ~ .checkmark {
+    background-color: #0b03fc;
+  }
+  
