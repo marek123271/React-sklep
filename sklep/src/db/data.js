@@ -23,7 +23,6 @@ const data = [
     color: "red",
     category: "sneakers",
   },
-
   {
     img: "https://m.media-amazon.com/images/I/51+P9uAvb1L._AC_UY695_.jpg",
     title: "Nike Waffle One Sneaker",
@@ -68,7 +67,6 @@ const data = [
     color: "black",
     category: "flats",
   },
-
   {
     img: "https://m.media-amazon.com/images/I/61V9APfz97L._AC_UY695_.jpg",
     title: "Loafer Flats",
@@ -80,7 +78,6 @@ const data = [
     color: "white",
     category: "flats",
   },
-
   {
     img: "https://m.media-amazon.com/images/I/71VaQ+V6XnL._AC_UY695_.jpg",
     title: "Nike Zoom Freak",
@@ -92,7 +89,6 @@ const data = [
     color: "green",
     category: "sneakers",
   },
-
   {
     img: "https://m.media-amazon.com/images/I/61-cBsLhJHL._AC_UY695_.jpg",
     title: "Nike Men's Sneaker",
@@ -104,7 +100,6 @@ const data = [
     color: "blue",
     category: "sneakers",
   },
-
   {
     img: "https://m.media-amazon.com/images/I/81xXDjojYKS._AC_UX575_.jpg",
     title: "PUMA BLACK-OCE",
@@ -150,18 +145,6 @@ const data = [
     category: "sneakers",
   },
   {
-    img: "https://m.media-amazon.com/images/I/7128-af7joL._AC_UY575_.jpg",
-    title: "Pacer Future Doubleknit",
-    star: <AiFillStar className="rating-star" />,
-    reviews: "(123 reviews)",
-    prevPrice: "$140,00",
-    newPrice: "150",
-    company: "Puma",
-    color: "black",
-    category: "sneakers",
-  },
-
-  {
     img: "https://m.media-amazon.com/images/I/81xXDjojYKS._AC_UX575_.jpg",
     title: "Fusion Evo Golf Shoe",
     star: <AiFillStar className="rating-star" />,
@@ -192,7 +175,7 @@ const data = [
     newPrice: "100",
     company: "Vans",
     color: "white",
-    category: "sandals",
+    category: "trainers",
   },
   {
     img: "https://m.media-amazon.com/images/I/71pf7VFs9CL._AC_UX575_.jpg",
@@ -203,7 +186,7 @@ const data = [
     newPrice: "100",
     company: "Vans",
     color: "blue",
-    category: "sandals",
+    category: "trainers",
   },
   {
     img: "https://m.media-amazon.com/images/I/61N4GyWcHPL._AC_UY575_.jpg",
@@ -214,7 +197,7 @@ const data = [
     newPrice: "50",
     company: "Nike",
     color: "black",
-    category: "sandals",
+    category: "trainers",
   },
   {
     img: "https://m.media-amazon.com/images/I/61bncQ44yML._AC_UX695_.jpg",
@@ -234,7 +217,7 @@ const data = [
     reviews: "(123 reviews)",
     prevPrice: "$140,00",
     newPrice: "100",
-    company: "puma",
+    company: "Puma",
     color: "black",
     category: "heels",
   },
@@ -260,7 +243,6 @@ const data = [
     color: "red",
     category: "sneakers",
   },
-
   {
     img: "https://m.media-amazon.com/images/I/51PGWTXgf-L._AC_UY625_.jpg",
     title: "Low Mid Block Heels",

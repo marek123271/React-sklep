@@ -1,7 +1,7 @@
 import React from 'react';
 import './Category.css';
 
-const categories = ["All", "Sneakers", "Flats", "Sandals", "Heels"];
+const categories = ["All", "Sneakers", "Flats", "Trainers", "Heels"];
 
 const Category = ({ onFilterChange }) => (
   <div className="category-container">
