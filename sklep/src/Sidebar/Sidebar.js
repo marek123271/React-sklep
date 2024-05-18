@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Category from "./Category/Category";
 import Price from "./Price/Price";
-import Colours from "./Colours/colours";
+import Colours from "./Colours/Colours";
 import "./Sidebar.css";
 
 const Sidebar = () => {
