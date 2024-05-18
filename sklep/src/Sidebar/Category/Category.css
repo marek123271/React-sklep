@@ -1,14 +1,16 @@
-/* Category.css */
 .category-container {
-  padding: 10px;
-}
-
-.category-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.category-list {
   display: flex;
   flex-direction: column;
+}
+
+.category-container button {
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.category-container button:hover {
+  background-color: #dcdcdc;
 }

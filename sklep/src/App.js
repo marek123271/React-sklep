@@ -1,91 +1,56 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import Navigation from './Navigation/Nav';
 import Products from './Products/Products';
 import Recommended from './Recommended/Recommended';
-import Category from './Sidebar/Category/Category';
-import Price from './Sidebar/Price/Price';
 import Sidebar from './Sidebar/Sidebar';
 import Data from './db/data';
-import './app.css'; // Check this line
-import Card from './components/Card';
-
-
-//Database import
-import products from './db/data';
-
+import './app.css';
 
 function App() {
+  const [filters, setFilters] = useState({ category: '', price: '', color: '' });
+  const [search, setSearch] = useState('');
 
-  const [selectesCategory, setSelectedCategory] = useState(null);
+  const handleFilterChange = (newFilters) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      ...newFilters
+    }));
+  };
 
-    //--------input filter------------
-    const [search, setSearch] = useState('');
-  
-    const handleInputChange = event =>{
-      setSearch(event.target.value);
-      
-    }
+  const handleInputChange = (event) => {
+    setSearch(event.target.value);
+  };
 
-    const filteredItems = Data.filter(product=>
-      product.title.toLocaleLowerCase().indexOf(search.toLocaleLowerCase()!==-1));
+  const filterByPrice = (product, price) => {
+    if (!price) return true;
+    const priceValue = parseFloat(product.newPrice);
+    if (price === '50') return priceValue < 50;
+    if (price === '100') return priceValue >= 50 && priceValue <= 100;
+    if (price === '150') return priceValue > 100 && priceValue <= 150;
+    if (price === '200') return priceValue > 150 && priceValue <= 200;
+    if (price === '200+') return priceValue > 200;
+    return true;
+  };
 
-          //--------radio filter------------
-        const handleChange = event =>{
-          setSelectedCategory(event.target.value)
-        };
+  const filteredItems = Data.filter((product) =>
+    product.title.toLowerCase().includes(search.toLowerCase())
+  );
 
-
-        //--------Btns filter------------
-        const handleClick = event =>{
-          setSelectedCategory(event.target.value)
-        };
-
-
-        function filteredData(Data,selected,search){
-          let filteredProducts = Data;
-          //filtering input items
-          if(search){
-            filteredProducts = filteredItems;
-        };
-
-        //selected Filter
-        if(selected){
-          filteredProducts = filteredProducts.filter(
-            ({category,color,company,newPrice,title})=>
-              category === selected ||
-             color===selected ||
-              company === selected ||
-               newPrice ===selected ||
-                title === selected
-)
-        }
-        return filteredProducts.map(
-          ({ img, title, star, reviews,prevPrice, newPrice }) => (
-          <Card
-            key={Math.random()}
-            img={img}
-            title={title}
-            star={star}
-            reviews={reviews}
-            newPrice={newPrice}
-            prevPrice={prevPrice}
-          />
-        ));
-        
-      };
-
-      const result = filteredData(products,selectesCategory,search);
-
+  const filteredData = filteredItems.filter((product) => {
+    const { category, price, color } = filters;
     return (
+      (!category || product.category === category) &&
+      filterByPrice(product, price) &&
+      (!color || product.color.toLowerCase() === color)
+    );
+  });
+
+  return (
     <>
-    <Sidebar handleChange={handleChange}/>
-    
-      <Navigation search={search} handleChange={handleChange}/>
-      <Recommended handleClick={handleClick}/>
-      <Products result={result}/>
-      
-      
-      
+      <Sidebar handleChange={handleFilterChange} />
+      <Navigation search={search} handleChange={handleInputChange} />
+      <Recommended />
+      <Products data={filteredData} />
     </>
   );
 }

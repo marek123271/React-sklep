@@ -1,52 +1,19 @@
-import React from "react";
-import "./Category.css";
-import Input from "../../components/Input";
+import React from 'react';
+import './Category.css';
 
-function Category({ handleChange }) {
-  return (
-    <div className="category-container">
-      <h2 className="sidebar-title category-title">Category</h2>
+const categories = ["All", "Sneakers", "Flats", "Sandals", "Heels"];
 
-      <div className="category-list">
-        <label className="sidebar-label-container">
-          <input onChange={handleChange} type="radio" value="" name="category" />
-          <span className="checkmark"></span>All
-        </label>
-
-        <Input
-          handleChange={handleChange}
-          value="sneakers"
-          title="Sneakers"
-          name="category"
-          
-        />
-
-        <Input
-          handleChange={handleChange}
-          value="flats"
-          title="Flats"
-          name="category"
-          
-        />
-
-        <Input
-          handleChange={handleChange}
-          value="sandals"
-          title="Sandals"
-          name="category"
-          
-        />
-
-        <Input
-          handleChange={handleChange}
-          value="heels"
-          title="Heels"
-          name="category"
-          
-        />
-      </div>
-    </div>
-  );
-}
+const Category = ({ onFilterChange }) => (
+  <div className="category-container">
+    {categories.map((category) => (
+      <button
+        key={category}
+        onClick={() => onFilterChange({ category: category === 'All' ? '' : category.toLowerCase() })}
+      >
+        {category}
+      </button>
+    ))}
+  </div>
+);
 
 export default Category;

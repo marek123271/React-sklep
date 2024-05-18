@@ -1,9 +1,8 @@
 import React from "react";
 import "./Products.css";
 import Card from "../components/Card";
-import data from "../db/data"; // Assuming you have imported your data
 
-function Products() {
+function Products({ data }) {
   return (
     <section className="card-container">
       {data.map((product, index) => (

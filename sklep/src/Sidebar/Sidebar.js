@@ -1,22 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Category from "./Category/Category";
 import Price from "./Price/Price";
 import Colours from "./Colours/Colours";
 import "./Sidebar.css";
 
-const Sidebar = () => {
-  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
-  const [isPriceOpen, setIsPriceOpen] = useState(false);
-  const [isColorOpen, setIsColorOpen] = useState(false);
-
-  const toggleCategory = () => setIsCategoryOpen(!isCategoryOpen);
-  const togglePrice = () => setIsPriceOpen(!isPriceOpen);
-  const toggleColor = () => setIsColorOpen(!isColorOpen);
-
-  const handleChange = (event) => {
-    console.log(event.target.value);
-  };
-
+const Sidebar = ({ handleChange }) => {
   return (
     <section className="sidebar">
       <div className="logo-container">
@@ -24,30 +12,24 @@ const Sidebar = () => {
       </div>
 
       <div className="sidebar-section">
-        <h2 className="sidebar-title" onClick={toggleCategory}>
+        <h2 className="sidebar-title">
           Category
         </h2>
-        <div className={`collapsible-content ${isCategoryOpen ? 'expanded' : ''}`}>
-          <Category handleChange={handleChange} />
-        </div>
+        <Category onFilterChange={handleChange} />
       </div>
 
       <div className="sidebar-section">
-        <h2 className="sidebar-title" onClick={togglePrice}>
+        <h2 className="sidebar-title">
           Price
         </h2>
-        <div className={`collapsible-content ${isPriceOpen ? 'expanded' : ''}`}>
-          <Price handleChange={handleChange} />
-        </div>
+        <Price onFilterChange={handleChange} />
       </div>
 
       <div className="sidebar-section">
-        <h2 className="sidebar-title" onClick={toggleColor}>
+        <h2 className="sidebar-title">
           Color
         </h2>
-        <div className={`collapsible-content ${isColorOpen ? 'expanded' : ''}`}>
-          <Colours handleChange={handleChange} />
-        </div>
+        <Colours onFilterChange={handleChange} />
       </div>
     </section>
   );
