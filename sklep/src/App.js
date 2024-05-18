@@ -9,6 +9,7 @@ import './app.css';
 function App() {
   const [filters, setFilters] = useState({ category: '', price: '', color: '' });
   const [search, setSearch] = useState('');
+  const [selectedCompany, setSelectedCompany] = useState('');
 
   const handleFilterChange = (newFilters) => {
     setFilters((prevFilters) => ({
@@ -45,12 +46,22 @@ function App() {
     );
   });
 
+  const handleCompanyChange = (company) => {
+    setSelectedCompany(company);
+    setFilters({ ...filters, category: '', color: '' }); // Reset other filters when changing company
+  };
+
+  // Filter by selected company
+  const filteredByCompany = selectedCompany
+    ? filteredData.filter(product => product.company === selectedCompany)
+    : filteredData;
+
   return (
     <>
       <Sidebar handleChange={handleFilterChange} />
       <Navigation search={search} handleChange={handleInputChange} />
-      <Recommended />
-      <Products data={filteredData} />
+      <Recommended onCompanyChange={handleCompanyChange} />
+      <Products data={filteredByCompany} />
     </>
   );
 }
