@@ -178,6 +178,17 @@ const data = [
     category: "trainers",
   },
   {
+    img: "https://m.media-amazon.com/images/I/71gpFHJlnoL._AC_UX575_.jpg",
+    title: "Top Trainers",
+    star: <AiFillStar className="rating-star" />,
+    reviews: "(145 reviews)",
+    prevPrice: "$180,00",
+    newPrice: "160",
+    company: "Vans",
+    color: "white",
+    category: "trainers",
+  },
+  {
     img: "https://m.media-amazon.com/images/I/71pf7VFs9CL._AC_UX575_.jpg",
     title: "Vans Unisex Low-Top",
     star: <AiFillStar className="rating-star" />,
