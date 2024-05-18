@@ -245,11 +245,11 @@ const data = [
   },
   {
     img: "https://m.media-amazon.com/images/I/519MRhRKGFL._AC_UX575_.jpg",
-    title: "Nike Air Vapormax Plus",
+    title: "Nike Air Vapormax",
     star: <AiFillStar className="rating-star" />,
     reviews: "(143 reviews)",
     prevPrice: "$135,00",
-    newPrice: "100",
+    newPrice: "90",
     company: "Nike",
     color: "red",
     category: "sneakers",
